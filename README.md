@@ -6,6 +6,7 @@ Paso 1
 Si ya cuenta con Phyton 3 puede saltarse este paso.
 De caso contrario ingrese a https://www.python.org/
 En la pestaña de downloads escoja su sistema operativo y descarge la ultima version estable de Python3
+
 Instale Python3
 
 Paso 2
