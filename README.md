@@ -15,18 +15,26 @@ Paso 3
 Si ya cuenta con SQLite puede saltarse este paso.
 
 De caso contrario ingrese a https://www.sqlite.org/download.html
-Y descarge el archivo segun su sistema operativo.
+Y descarge el archivo segun su sistema operativo que comience por sqlite-tools.
 
 Paso 4 
 Instale SQLite.
+Windows: https://www.youtube.com/watch?v=wXEZZ2JT3-k&ab_channel=ProgrammingKnowledge
+MAC: https://www.youtube.com/watch?v=SkXxnasbrFY&ab_channel=CoolITHelp
+Linux: https://www.youtube.com/watch?v=wFTfbtelaiM&ab_channel=LinuxH2O
 
 Paso 5
-Descarga tu entorno o ambiente de programacion de tu preferencia.
+Descarga IDE de tu preferencia.
 
 Si ya cuenta con un ambiente de programacion puedes saltarte este paso.
 
 Paso 6
-Descarga los plugins y configura tu entorno para correr Phyton3.
+Instala en la configuracion de tu IDE los plugins o extenciones de Phyton3.
+
+Aqui les dejo dos ejemplos segun su IDE, personalmente les recomiendo IntelliJ
+
+IntelliJ: https://www.youtube.com/watch?v=F2RKPmIn_BA&ab_channel=LeonMarsden
+Visual Studio: https://www.youtube.com/watch?v=eFThEXvuZaM&t=187s&ab_channel=Programaci%C3%B3nDesdeCero
 
 Paso 7
 Clone el repositorio.
