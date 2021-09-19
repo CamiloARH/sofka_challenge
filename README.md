@@ -48,8 +48,7 @@ Desde su entorno de programación abra el folder del repositorio.
 
 Paso 9
 Abra el archivo database.py y corralo. (este archivo solo lo debera correr una vez)
+Asegurece que si esta corriendo este archivo
 
 Paso 10
-Abra el archivo maingame.py, corralo y empieza a disfrutar de este pequeño juego :).
-
-
+Abra el archivo maingame.py, corralo, asegurece que si esta corriendo este archivo y empieza a disfrutar de este pequeño juego :).
