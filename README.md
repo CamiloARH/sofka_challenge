@@ -18,7 +18,7 @@ De caso contrario ingrese a https://www.sqlite.org/download.html
 Y descarge el archivo segun su sistema operativo.
 
 Paso 4 
-Istale SQLite.
+Instale SQLite.
 
 Paso 5
 Descarga tu entorno o ambiente de programacion de tu preferencia.
