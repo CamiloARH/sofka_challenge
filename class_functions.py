@@ -3,7 +3,7 @@ import random
 
 db = sqlite3.connect("sofka_challenge.sqlite")
 
-
+# Main Class
 class Game(object):
 
     def __init__(self, name='User', level=1, points=0, question='', answer=''):
@@ -18,12 +18,14 @@ class Category(Game):
     def __init__(self):
         super(Category, self).__init__(level=1, points=0)
 
+    # To get the category
     def get_category(lv=1):
         cursor = db.execute("SELECT Category_name FROM Category WHERE (Level=?)", (lv, ))
         category_level = cursor.fetchone()
         print('Estás en la', category_level[0])
         return category_level
 
+    # To get the points
     def get_point(lv=1, point=0):
         cursor = db.execute("SELECT Points FROM Category WHERE (Level=?)", (lv, )).fetchone()
         point = point + cursor[0]
@@ -37,16 +39,16 @@ class Questions(Game):
     def __init__(self):
         super(Questions, self).__init__(question='')
 
+    # To get the Question to ask
     def get_question(lv):
         random_number= random.randrange(0, 5)
-        # print(random_number)  # TODO
         questions = db.execute("SELECT Question FROM Questions WHERE (Category_id=?)", (lv, )).fetchall()
         print('tu pregunta es:', questions[random_number][0])
         return questions[random_number][0]
 
+    # To get the Id Question
     def get_question_id(questions):
         question_id = db.execute("SELECT Id FROM Questions WHERE (Question=?)", (questions, )).fetchone()
-        # print(question_id[0])  # TODO
         return question_id[0]
 
 
@@ -54,10 +56,12 @@ class Answers(Game):
     def __init__(self):
         super(Answers, self).__init__(answer='')
 
+    # To get the correct Answer of the question
     def get_answer(question_id):
         for answer in enumerate(db.execute("SELECT Answer FROM Answers WHERE (Question_id=?)", (question_id, )).fetchall()):
             print(answer[0] + 1, ':', answer[1][0])
 
+    # To check if the answer was right
     def get_check(question_id, answer_input):
         check = db.execute("SELECT Correct FROM Answers WHERE (Question_id=?)", (question_id, )).fetchall()
         return check[answer_input-1][0]
@@ -68,10 +72,12 @@ class User(Game):
     def __init__(self):
         super().__init__(name='User')
 
+    # Said hi to the User
     def get_nameuser(name):
         print('Hola',name,'bienvenido a este pequeño juego de preguntas')
         print('Mucha suerte')
 
+    # To get the user information save
     def get_save(name, points):
 
         db.execute("INSERT INTO Users VALUES (?, ?)", (name, points))
@@ -80,6 +86,7 @@ class User(Game):
         print(save[0], ', tu puntuación total fue:', save[1])
 
 
+# Loop for numbers: INT
 def getint(prompt):
     while True:
         try:
@@ -92,6 +99,7 @@ def getint(prompt):
             print("Numero invalido, por favor trate de nuevo")
 
 
+# Loop for si o no: STR
 def getstr(prompt):
     while True:
         try:
@@ -114,9 +122,3 @@ def getstr(prompt):
             print("Numero no son validos, por favor trate de nuevo")
 
 
-
-# qi = Questions.get_question(1)
-# qid= Questions.get_question_id(qi)
-# answ =Answers.get_answer(qid)
-# answ_inpu = 1
-# check = Answers.get_check(qid,answ_inpu)

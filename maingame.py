@@ -1,18 +1,24 @@
 from class_functions import Game, Category as ct, Questions as qu, Answers as aw, User, getint, getstr
 
+# Starting the game
 name=input('Por favor ingresa tu nombre: ')
 User.get_nameuser(name)
 input('Pulse enter para continuar...')
 print()
 i = 1
 points = 0
+
+# Loop to play 5 times
 while i <= 5:
+    # Main game
     category = ct.get_category(i)
     question = qu.get_question(i)
     id_question = qu.get_question_id(question)
     answers = aw.get_answer(id_question)
     answer_input = getint('Por favor digite una respuesta del 1 al 4: ')
     check = aw.get_check(id_question,answer_input)
+
+    # Check to ask if you wanna continue or not
     if check == 'True':
         print()
         print('La respuesta es correcta')
@@ -35,6 +41,8 @@ while i <= 5:
         print()
         break
     i += 1
+
+# Player information
 info = User.get_save(name,points)
 
 
