@@ -84,6 +84,8 @@ class User(Game):
         print()
         save = db.execute("SELECT * FROM Users").fetchall()[0]
         print(save[0], ', tu puntuación total fue:', save[1])
+        db.commit()
+        db.close()
 
 
 # Loop for numbers: INT
